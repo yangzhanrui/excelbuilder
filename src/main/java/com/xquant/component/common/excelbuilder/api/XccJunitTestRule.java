@@ -108,6 +108,10 @@ public class XccJunitTestRule implements TestRule {
 
 					}
 
+				}else {
+					
+					base.evaluate();
+					
 				}
 
 			}

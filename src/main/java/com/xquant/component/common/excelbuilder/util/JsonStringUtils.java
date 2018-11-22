@@ -175,10 +175,10 @@ public class JsonStringUtils {
 	 */
 	public static ResultOfJsonMapCompare compareSimpleJsonWithMap(String simpleJsonStr, Map<String, Object> map) {
 		ResultOfJsonMapCompare result = new ResultOfJsonMapCompare();
-		Map<String, String> jsonMap = JSON.parseObject(simpleJsonStr, Map.class);
+		Map<String, Object> jsonMap = JSON.parseObject(simpleJsonStr, Map.class);
 		Set<String> keySet = jsonMap.keySet();
 		for (String key : keySet) {
-			String jsonValue = jsonMap.get(key);
+			Object jsonValue = jsonMap.get(key);
 			Object mapValue = map.get(key);
 			if (mapValue == null) {
 				result.addErrorInfo("查询返回结果集中对应的key{" + key + "}不存在");
